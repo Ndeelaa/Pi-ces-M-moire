@@ -847,6 +847,15 @@
           preserveAspectRatio="none"
           aria-hidden="true"
         >
+          <defs>
+            <mask id="timeline-stitch-mask" maskUnits="userSpaceOnUse">
+              <path
+                class="timeline-curve__mask"
+                pathLength="1"
+                d="M500 20 C260 360, 760 620, 500 960 C250 1290, 750 1540, 500 1880 C250 2220, 760 2480, 500 2840 C260 3190, 740 3440, 500 3810 C280 4160, 680 4440, 500 4780"
+              />
+            </mask>
+          </defs>
           <path
             class="timeline-curve__ghost"
             pathLength="1"
@@ -855,6 +864,7 @@
           <path
             class="timeline-curve__draw"
             pathLength="1"
+            mask="url(#timeline-stitch-mask)"
             d="M500 20 C260 360, 760 620, 500 960 C250 1290, 750 1540, 500 1880 C250 2220, 760 2480, 500 2840 C260 3190, 740 3440, 500 3810 C280 4160, 680 4440, 500 4780"
           />
         </svg>
@@ -1067,8 +1077,7 @@
           playsinline
           preload="metadata"
         >
-          <source src="./Videos/eames-transition-06.mp4" type="video/mp4" />
-          <source src="./Vidéos/eames-transition-06.mp4" type="video/mp4" />
+          <source src="./Vidéos/Ray&Charles2.mov" type="video/quicktime" />
         </video>
         <div class="chapter-gate__content reveal-on-scroll">
           <span>Chapitre VI</span>
@@ -1091,16 +1100,6 @@
         class="final-scene final-scene--mosaic reveal-on-scroll"
         aria-label="Fin de l’histoire Eames Lounge Chair"
       >
-        <video
-          class="final-scene__background-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          aria-hidden="true"
-        >
-          <source src="./Vidéos/Ray&Charles2.mov" type="video/quicktime" />
-        </video>
         <div class="final-mosaic" aria-hidden="true">
           <div class="final-mosaic__cell final-mosaic__cell--image">
             <img src="./Images/Eames/eames 01.png" alt="" />
