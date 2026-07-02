@@ -1699,40 +1699,6 @@ main::before {
     0 24px 52px rgba(18, 10, 7, 0.3);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition:
-    border-color 1.15s ease,
-    background 1.15s ease,
-    box-shadow 1.15s ease,
-    transform 1.15s ease;
-}
-
-.timeline-marker.is-stitched {
-  border-color: rgba(255, 244, 234, 0.84);
-  background:
-    radial-gradient(circle, rgba(255, 216, 194, 0.44), transparent 56%),
-    rgba(181, 66, 27, 0.86);
-  box-shadow:
-    0 0 0 10px rgba(181, 66, 27, 0.18),
-    0 0 30px rgba(255, 216, 194, 0.46),
-    0 24px 52px rgba(18, 10, 7, 0.3);
-  animation: timelineMarkerGlow 3.4s ease-in-out infinite;
-}
-
-@keyframes timelineMarkerGlow {
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 10px rgba(181, 66, 27, 0.14),
-      0 0 20px rgba(255, 216, 194, 0.32),
-      0 24px 52px rgba(18, 10, 7, 0.3);
-  }
-
-  50% {
-    box-shadow:
-      0 0 0 14px rgba(181, 66, 27, 0.2),
-      0 0 42px rgba(255, 216, 194, 0.58),
-      0 24px 52px rgba(18, 10, 7, 0.3);
-  }
 }
 
 .timeline-marker span {
@@ -2219,19 +2185,16 @@ main::before {
   position: absolute;
   left: 50%;
   top: clamp(78px, 10vh, 130px);
-  bottom: clamp(100px, 14vh, 170px);
   width: min(38vw, 520px);
-  height: auto;
+  height: calc(100% - clamp(170px, 22vh, 300px));
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 0;
   pointer-events: none;
   overflow: visible;
 }
 
 .timeline-curve__ghost,
-.timeline-curve__glow,
-.timeline-curve__draw,
-.timeline-curve__mask {
+.timeline-curve__draw {
   fill: none;
   vector-effect: non-scaling-stroke;
   stroke-linecap: round;
@@ -2239,37 +2202,17 @@ main::before {
 }
 
 .timeline-curve__ghost {
-  stroke: rgba(255, 216, 194, 0.5);
-  stroke-width: 3.1;
-  stroke-dasharray: 0.016 0.025;
-}
-
-.timeline-curve__glow {
-  stroke: rgba(255, 189, 136, 0.98);
-  stroke-width: 8;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  filter:
-    drop-shadow(0 0 10px rgba(255, 216, 194, 0.72))
-    drop-shadow(0 0 30px rgba(181, 66, 27, 0.92));
+  stroke: rgba(255, 216, 194, 0.16);
+  stroke-width: 1.25;
+  stroke-dasharray: 0.012 0.022;
 }
 
 .timeline-curve__draw {
-  stroke: rgba(255, 244, 234, 1);
-  stroke-width: 5.4;
-  stroke-dasharray: 0.018 0.024;
-  stroke-dashoffset: 0;
-  filter:
-    drop-shadow(0 0 10px rgba(255, 216, 194, 0.86))
-    drop-shadow(0 0 28px rgba(181, 66, 27, 0.82));
-  mask: url("#timeline-stitch-mask");
-}
-
-.timeline-curve__mask {
-  stroke: #fff;
-  stroke-width: 22;
+  stroke: rgba(181, 66, 27, 0.95);
+  stroke-width: 2.1;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
+  filter: drop-shadow(0 8px 14px rgba(18, 10, 7, 0.24));
 }
 
 .timeline-frame,
