@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pièces Mémoire — Eames Lounge Chair</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="eames.css" />
+  </head>
+
+  <body>
+    <div class="intro-curtain" aria-hidden="true">
+      <div class="curtain-panel curtain-panel--left">
+        <div class="curtain-folds"></div>
+      </div>
+      <div class="curtain-panel curtain-panel--right">
+        <div class="curtain-folds"></div>
+      </div>
+      <div class="curtain-title">
+        <span class="curtain-title__brand">Pièces Mémoire</span>
+        <span class="curtain-title__present">présente</span>
+      </div>
+    </div>
+
+    <header class="story-header">
+      <a
+        href="index.html"
+        class="story-exit"
+        aria-label="Retour à l’accueil Pièces Mémoire"
+        title="Sortie"
+      >
+        <img src="./Images/logo archival.png" alt="" />
+      </a>
+    </header>
+
+    <nav class="chapter-nav" aria-label="Navigation des chapitres">
+      <a
+        href="#chapter-opening"
+        class="chapter-nav__link is-active"
+        data-chapter-link
+      >
+        <span class="chapter-nav__label">Ouverture</span>
+        <span class="chapter-nav__number">00</span>
+      </a>
+      <a href="#chapter-idea" class="chapter-nav__link" data-chapter-link>
+        <span class="chapter-nav__label">Genèse</span>
+        <span class="chapter-nav__number">01</span>
+      </a>
+      <a href="#chapter-question" class="chapter-nav__link" data-chapter-link>
+        <span class="chapter-nav__label">Le défi</span>
+        <span class="chapter-nav__number">02</span>
+      </a>
+      <a href="#chapter-workshop" class="chapter-nav__link" data-chapter-link>
+        <span class="chapter-nav__label">L’atelier</span>
+        <span class="chapter-nav__number">03</span>
+      </a>
+      <a href="#chapter-assembly" class="chapter-nav__link" data-chapter-link>
+        <span class="chapter-nav__label">Assemblage</span>
+        <span class="chapter-nav__number">04</span>
+      </a>
+      <a href="#chapter-legacy" class="chapter-nav__link" data-chapter-link>
+        <span class="chapter-nav__label">Héritage</span>
+        <span class="chapter-nav__number">05</span>
+      </a>
+      <a href="#chapter-final" class="chapter-nav__link" data-chapter-link>
+        <span class="chapter-nav__label">Final</span>
+        <span class="chapter-nav__number">06</span>
+      </a>
+    </nav>
+
+    <main>
+      <section
+        class="opening-scene chapter-section"
+        id="chapter-opening"
+        data-chapter-section
+      >
+        <video
+          class="opening-scene__background-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source
+            src="./Vidéos/Eamesloungerotating.mov"
+            type="video/quicktime"
+          />
+        </video>
+
+        <div class="opening-scene__text reveal-on-scroll">
+          <p class="eyebrow">Objet iconique de 1956</p>
+          <h1>
+            Eames<br />
+            Lounge<br />
+            Chair
+          </h1>
+          <p>L'un des fauteuils les plus célèbres du XXe siècle.</p>
+        </div>
+      </section>
+
+      <section class="text-interlude prelude-zoom reveal-on-scroll">
+        <p>
+          Avant d’entrer dans les musées et d'apparaître dans les magazines.
+        </p>
+      </section>
+      <section class="text-interlude reveal-on-scroll">
+        <p>Avant de devenir une icône.</p>
+      </section>
+      <section class="text-interlude reveal-on-scroll">
+        <p>Il n’était encore qu’une idée.</p>
+      </section>
+
+      <section
+        class="chapter-gate chapter-section"
+        id="chapter-idea"
+        data-chapter-section
+      >
+        <video
+          class="chapter-gate__video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./Vidéos/background01.mp4" type="video/mp4" />
+          <source src="./Vidéos/background01.mp4" type="video/mp4" />
+        </video>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre I</span>
+          <h2>Genèse</h2>
+          <p>Avant l’icône, il y a une origine.</p>
+        </div>
+      </section>
+
+      <section
+        class="chapter-story single-phrase-flow"
+        aria-label="Genèse de l’objet"
+      >
+        <article
+          class="story-frame story-frame--text-only california-background reveal-on-scroll"
+        >
+          <video
+            class="california-background__video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="./Videos/usa01.mp4" type="video/mp4" />
+            <source src="./Vidéos/usa01.mp4" type="video/mp4" />
+          </video>
+          <div class="california-background__fallback dotted-asset">
+            <span>vidéo à placer : Videos/usa01.mp4</span>
+          </div>
+          <div class="california-background__shade" aria-hidden="true"></div>
+          <div class="story-frame__copy story-frame__copy--center">
+            <span class="eyebrow">Lieu</span>
+            <p>Nous sommes en Californie.</p>
+          </div>
+        </article>
+
+        <article class="story-frame story-frame--reverse reveal-on-scroll">
+          <div
+            class="story-frame__visual story-frame__visual--video parallax-visual"
+          >
+            <video muted loop playsinline preload="metadata">
+              <source
+                src="./Vidéos/california1950.mov"
+                type="video/quicktime"
+              />
+              <source
+                src="./Vidéos/california1950.mov"
+                type="video/quicktime"
+              />
+            </video>
+          </div>
+          <div class="story-frame__copy">
+            <span class="eyebrow">Époque</span>
+            <p>
+              Au milieu des années
+              <span class="rolling-year" data-year="1950" aria-label="1950"
+                >1950</span
+              >
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="story-frame story-frame--text-only reveal-on-scroll atelier-floating-scene"
+          data-floating-scene
+        >
+          <div class="floating-objects" aria-hidden="true">
+            <img
+              class="floating-object floating-object--01"
+              src="./Images/Eames/furniture01.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="34"
+              data-float-x="32"
+              data-float-y="22"
+              data-speed="0.72"
+              data-rotation="-7"
+            />
+            <img
+              class="floating-object floating-object--02"
+              src="./Images/Eames/furniture02.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="46"
+              data-float-x="24"
+              data-float-y="34"
+              data-speed="0.9"
+              data-rotation="8"
+            />
+            <img
+              class="floating-object floating-object--03"
+              src="./Images/Eames/furniture03.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="28"
+              data-float-x="36"
+              data-float-y="18"
+              data-speed="0.64"
+              data-rotation="5"
+            />
+            <img
+              class="floating-object floating-object--04"
+              src="./Images/Eames/furniture04.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="40"
+              data-float-x="28"
+              data-float-y="30"
+              data-speed="0.82"
+              data-rotation="-4"
+            />
+            <img
+              class="floating-object floating-object--05"
+              src="./Images/Eames/furniture05.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="36"
+              data-float-x="42"
+              data-float-y="24"
+              data-speed="0.76"
+              data-rotation="12"
+            />
+            <img
+              class="floating-object floating-object--06"
+              src="./Images/Eames/furniture06.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="52"
+              data-float-x="30"
+              data-float-y="44"
+              data-speed="0.98"
+              data-rotation="-12"
+            />
+            <img
+              class="floating-object floating-object--07"
+              src="./Images/Eames/furniture07.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="31"
+              data-float-x="26"
+              data-float-y="38"
+              data-speed="0.7"
+              data-rotation="6"
+            />
+            <img
+              class="floating-object floating-object--08"
+              src="./Images/Eames/furniture08.png"
+              onerror="this.style.display = 'none'"
+              alt=""
+              data-depth="44"
+              data-float-x="38"
+              data-float-y="28"
+              data-speed="0.88"
+              data-rotation="-9"
+            />
+          </div>
+          <div class="story-frame__copy story-frame__copy--center">
+            <p class="atelier-floating-scene__text">
+              Dans leur atelier, Charles et Ray Eames observent le mobilier qui
+              les entoure.
+            </p>
+          </div>
+          <div class="atelier-floating-hint" aria-hidden="true">
+            Faites bouger les objets
+          </div>
+        </article>
+
+        <div
+          class="horizontal-scroll horizontal-scroll--genesis"
+          data-horizontal-scroll
+        >
+          <div class="horizontal-scroll__sticky">
+            <div class="horizontal-scroll__track">
+              <article
+                class="story-frame story-frame--text-only reveal-on-scroll horizontal-scroll__panel"
+              >
+                <div class="story-frame__copy story-frame__copy--center">
+                  <p>
+                    Beaucoup de fauteuils modernes sont
+                    <span class="sketch-circle-mark">
+                      <span>élégants</span>
+                      <svg viewBox="0 0 220 92" aria-hidden="true">
+                        <path
+                          d="M18 51 C15 28, 47 10, 101 7 C160 4, 207 24, 205 52 C203 80, 151 90, 89 85 C40 81, 13 67, 18 51 Z M24 48 C28 20, 70 11, 128 13 C182 15, 213 36, 196 62 C183 82, 129 86, 70 76 C35 70, 16 60, 24 48 Z"
+                        />
+                      </svg> </span
+                    >.
+                  </p>
+                </div>
+              </article>
+
+              <article
+                class="story-frame story-frame--text-only reveal-on-scroll horizontal-scroll__panel"
+              >
+                <div class="story-frame__copy story-frame__copy--center">
+                  <p>
+                    Beaucoup sont
+                    <span class="sketch-circle-mark">
+                      <span>innovants</span>
+                      <svg viewBox="0 0 240 92" aria-hidden="true">
+                        <path
+                          d="M23 52 C19 25, 55 9, 112 8 C178 7, 224 25, 221 55 C218 83, 162 90, 96 84 C45 79, 17 67, 23 52 Z M16 55 C20 31, 57 14, 123 12 C188 10, 231 31, 214 60 C201 83, 150 86, 86 78 C39 72, 12 64, 16 55 Z"
+                        />
+                      </svg> </span
+                    >.
+                  </p>
+                </div>
+              </article>
+
+              <article
+                class="story-frame story-frame--text-only reveal-on-scroll horizontal-scroll__panel"
+              >
+                <div class="story-frame__copy story-frame__copy--center">
+                  <p>
+                    <span class="sketch-circle-mark sketch-circle-mark--wide">
+                      <span>Mais peu</span>
+                      <svg viewBox="0 0 220 92" aria-hidden="true">
+                        <path
+                          d="M17 49 C12 24, 48 9, 103 8 C162 7, 205 27, 202 55 C198 82, 148 91, 87 84 C39 78, 13 65, 17 49 Z M24 51 C22 22, 63 12, 116 14 C171 16, 210 35, 195 61 C182 82, 135 86, 78 77 C38 71, 18 62, 24 51 Z"
+                        />
+                      </svg>
+                    </span>
+                    donnent envie de s’y installer pendant des heures.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="chapter-gate chapter-section"
+        id="chapter-question"
+        data-chapter-section
+      >
+        <video
+          class="chapter-gate__video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./Vidéos/eamestransformation.mov" type="video/quicktime" />
+          <source src="./Vidéos/eamestransformation.mov" type="video/quicktime" />
+        </video>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre II</span>
+          <h2>Le défi</h2>
+          <p>Créer un fauteuil moderne, mais profondément confortable.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story single-phrase-flow">
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Alors une question apparaît.</p>
+          </div>
+        </article>
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Simple.</p>
+          </div>
+        </article>
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Presque évidente.</p>
+          </div>
+        </article>
+        <article
+          class="story-frame story-frame--text-only reveal-on-scroll shutter-transition"
+          data-shutter
+        >
+          <div class="story-frame__copy story-frame__copy--center">
+            <h3>
+              Et si un fauteuil moderne pouvait aussi être profondément
+              confortable ?
+            </h3>
+          </div>
+        </article>
+        <div
+          class="horizontal-scroll horizontal-scroll--comfort"
+          data-horizontal-scroll
+        >
+          <div class="horizontal-scroll__sticky">
+            <div class="horizontal-scroll__track">
+              <div class="horizontal-scroll__panel horizontal-scroll__panel--preserve">
+                <article class="story-frame reveal-on-scroll">
+                  <div
+                    class="story-frame__visual parallax-visual story-frame__visual--image"
+                  >
+                    <img
+                      src="./Images/Eames/eames09.png"
+                      alt="Eames Lounge Chair et confort du corps"
+                    />
+                    <div class="dotted-asset">
+                      <span>image à placer : Images/Eames/eames09.png</span>
+                    </div>
+                  </div>
+                  <div class="story-frame__copy">
+                    <p>Pas seulement pour le corps.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="horizontal-scroll__panel horizontal-scroll__panel--preserve">
+                <article class="story-frame story-frame--reverse reveal-on-scroll">
+                  <div
+                    class="story-frame__visual parallax-visual dotted-asset dotted-asset--large"
+                  >
+                    <span>image possible : Images/Eames/comfort-mind-dots.png</span>
+                  </div>
+                  <div class="story-frame__copy"><p>Pour l’esprit aussi.</p></div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="chapter-gate chapter-section"
+        id="chapter-workshop"
+        data-chapter-section
+      >
+        <video
+          class="chapter-gate__video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./Videos/etincelles01.mp4" type="video/mp4" />
+          <source src="./Vidéos/étincelles01.mp4" type="video/mp4" />
+        </video>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre III</span>
+          <h2>L’atelier</h2>
+          <p>Le bois se chauffe, se courbe et devient langage.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story single-phrase-flow">
+        <article class="story-frame reveal-on-scroll">
+          <div
+            class="story-frame__visual parallax-visual story-frame__visual--image"
+          >
+            <img src="./Images/Eames/eames wood.png" alt="Bois courbé" />
+            <div class="dotted-asset">
+              <span>image à placer : Images/Eames/eames wood.png</span>
+            </div>
+          </div>
+          <div class="story-frame__copy">
+            <p>Dans l’atelier, le bois entre en transformation.</p>
+          </div>
+        </article>
+        <div
+          class="horizontal-scroll horizontal-scroll--wood"
+          data-horizontal-scroll
+        >
+          <div class="horizontal-scroll__sticky">
+            <div class="horizontal-scroll__track">
+              <article class="wood-process-panel horizontal-scroll__panel">
+                <video muted loop playsinline preload="metadata">
+                  <source src="./Videos/fire01.mp4" type="video/mp4" />
+                  <source src="./Vidéos/fire01.mp4" type="video/mp4" />
+                </video>
+                <p>Chauffé.</p>
+              </article>
+              <article class="wood-process-panel horizontal-scroll__panel">
+                <video muted loop playsinline preload="metadata">
+                  <source src="./Videos/wood01.mp4" type="video/mp4" />
+                  <source src="./Vidéos/wood01.mp4" type="video/mp4" />
+                </video>
+                <p>Courbé.</p>
+              </article>
+              <article class="wood-process-panel horizontal-scroll__panel">
+                <video muted loop playsinline preload="metadata">
+                  <source src="./Vidéos/eamespressed.mov" type="video/quicktime" />
+                  <source src="./Vidéos/eamespressed.mov" type="video/quicktime" />
+                </video>
+                <p>Pressé.</p>
+              </article>
+              <article class="wood-process-panel horizontal-scroll__panel">
+                <video muted loop playsinline preload="metadata">
+                  <source src="./Videos/etincelles01.mp4" type="video/mp4" />
+                  <source src="./Vidéos/étincelles01.mp4" type="video/mp4" />
+                </video>
+                <p>Façonné.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+        <article class="story-frame story-frame--reverse reveal-on-scroll">
+          <div
+            class="story-frame__visual story-frame__visual--video parallax-visual"
+          >
+            <video muted loop playsinline preload="metadata">
+              <source src="./Vidéos/eamesloungechairmaking.mov" type="video/quicktime" />
+              <source src="./Vidéos/eamesloungechairmaking.mov" type="video/quicktime" />
+            </video>
+            <div class="dotted-asset">
+              <span>vidéo à placer : Vidéos/eamesloungechairmaking.mov</span>
+            </div>
+          </div>
+          <div class="story-frame__copy">
+            <p>Des feuilles de matière se transforment peu à peu en courbes.</p>
+          </div>
+        </article>
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Encore.</p>
+          </div>
+        </article>
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Et encore.</p>
+          </div>
+        </article>
+        <article
+          class="story-frame story-frame--text-only reveal-on-scroll rotoscope-frame"
+        >
+          <div class="story-frame__copy story-frame__copy--center">
+            <h3>Jusqu’à trouver la forme juste.</h3>
+          </div>
+        </article>
+      </section>
+
+      <section
+        class="chapter-gate chapter-section"
+        id="chapter-assembly"
+        data-chapter-section
+      >
+        <video
+          class="chapter-gate__video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./Vidéos/eamesassemblage.mov" type="video/quicktime" />
+          <source src="./Vidéos/eamesassemblage.mov" type="video/quicktime" />
+        </video>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre IV</span>
+          <h2>Assemblage</h2>
+          <p>Chaque élément trouve son équilibre.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story single-phrase-flow">
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <h3>Chaque élément trouve sa place.</h3>
+          </div>
+        </article>
+        <section
+          class="eames-assembly-section"
+          aria-label="Assemblage 3D du fauteuil Eames Lounge Chair"
+        >
+          <div class="eames-assembly-scene">
+            <div class="eames-assembly-copy">
+              <span>Exploded view</span>
+              <p>Les pièces se rapprochent, l’objet se reconstruit.</p>
+            </div>
+
+            <div class="eames-assembly-object" data-eames-assembly>
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameselement4.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameselement2.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eamespuff4.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameseelemnt5.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eamespuff2.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameshead.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eamespuff3.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameswheel1.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameswood1.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameswood3.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameswood2.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eamessleeve1.png"
+                alt=""
+              />
+              <img
+                class="eames-assembly-piece"
+                src="./Images/Eames/Eames 3D/eameselement.png"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--seat"
+              data-assembly-callout
+            >
+              <svg
+                class="eames-assembly-callout__arrow"
+                viewBox="0 0 300 130"
+                aria-hidden="true"
+              >
+                <circle
+                  class="eames-assembly-callout__dot"
+                  cx="8"
+                  cy="120"
+                  r="4"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--diagonal"
+                  d="M 8 120 L 38.72 -15.84"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--horizontal"
+                  d="M 38.72 -15.84 L -32.1 -15.84"
+                />
+              </svg>
+              <p class="eames-assembly-callout__label">L’assise</p>
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--back"
+              data-assembly-callout
+            >
+              <svg
+                class="eames-assembly-callout__arrow"
+                viewBox="0 0 300 130"
+                aria-hidden="true"
+              >
+                <circle
+                  class="eames-assembly-callout__dot"
+                  cx="8"
+                  cy="160"
+                  r="4"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--diagonal"
+                  d="M 8 160 L 8 358"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--horizontal"
+                  d="M 8 358 L 352 358"
+                />
+              </svg>
+              <p class="eames-assembly-callout__label">Le dossier.</p>
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--headrest"
+              data-assembly-callout
+            >
+              <svg
+                class="eames-assembly-callout__arrow"
+                viewBox="0 0 300 130"
+                aria-hidden="true"
+              >
+                <circle
+                  class="eames-assembly-callout__dot"
+                  cx="8"
+                  cy="120"
+                  r="4"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--diagonal"
+                  d="M 8 120 L 26.36 38.64"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--horizontal"
+                  d="M 26.36 38.64 L 280.67 38.64"
+                />
+              </svg>
+              <p class="eames-assembly-callout__label">L’appui-tête.</p>
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--ottoman"
+              data-assembly-callout
+            >
+              <svg
+                class="eames-assembly-callout__arrow"
+                viewBox="0 0 300 130"
+                aria-hidden="true"
+              >
+                <circle
+                  class="eames-assembly-callout__dot"
+                  cx="8"
+                  cy="120"
+                  r="4"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--diagonal"
+                  d="M 8 120 L -45 212"
+                />
+                <path
+                  class="eames-assembly-callout__line eames-assembly-callout__line--horizontal"
+                  d="M -45 212 L -65.25 212"
+                />
+              </svg>
+              <p class="eames-assembly-callout__label">Le repose-pieds.</p>
+            </div>
+          </div>
+        </section>
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Rien ne semble superflu.</p>
+          </div>
+        </article>
+        <section
+          class="public-transition-flow"
+          aria-label="Le fauteuil quitte l’atelier et rencontre le public"
+        >
+          <video
+            class="public-transition-flow__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-hidden="true"
+          >
+            <source src="./Vidéos/eamespresentation.mov" type="video/quicktime" />
+          </video>
+          <div class="public-transition-flow__shade" aria-hidden="true"></div>
+          <article class="story-frame reveal-on-scroll">
+            <div
+              class="story-frame__visual story-frame__visual--spacer"
+              aria-hidden="true"
+            ></div>
+            <div class="story-frame__copy">
+              <p>Puis vient le moment où l’objet quitte l’atelier.</p>
+            </div>
+          </article>
+          <article class="story-frame story-frame--reverse reveal-on-scroll">
+            <div
+              class="story-frame__visual story-frame__visual--spacer"
+              aria-hidden="true"
+            ></div>
+            <div class="story-frame__copy">
+              <p class="no-progress-text">Le fauteuil est présenté au public.</p>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section
+        class="chapter-gate chapter-section"
+        id="chapter-legacy"
+        data-chapter-section
+      >
+        <video
+          class="chapter-gate__video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./Vidéos/eamesheritage.mov" type="video/quicktime" />
+          <source src="./Vidéos/eamesheritage.mov" type="video/quicktime" />
+        </video>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre V</span>
+          <h2>Héritage</h2>
+          <p>L’objet traverse les époques sans disparaître.</p>
+        </div>
+      </section>
+
+      <section
+        class="chapter-story timeline-story single-phrase-flow"
+        aria-label="Timeline progressive de l’héritage"
+      >
+        <svg
+          class="timeline-curve"
+          viewBox="0 0 1000 4800"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            class="timeline-curve__ghost"
+            pathLength="1"
+            d="M500 20 C260 360, 760 620, 500 960 C250 1290, 750 1540, 500 1880 C250 2220, 760 2480, 500 2840 C260 3190, 740 3440, 500 3810 C280 4160, 680 4440, 500 4780"
+          />
+          <path
+            class="timeline-curve__draw"
+            pathLength="1"
+            d="M500 20 C260 360, 760 620, 500 960 C250 1290, 750 1540, 500 1880 C250 2220, 760 2480, 500 2840 C260 3190, 740 3440, 500 3810 C280 4160, 680 4440, 500 4780"
+          />
+        </svg>
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>1956</span></div>
+          <figure class="timeline-asset timeline-asset--year-roll parallax-visual">
+            <img
+              src="./Images/Eames/eames 01.png"
+              onerror="
+                this.onerror = null;
+                this.src = './Images/Eames/eames01.png';
+              "
+              alt="Eames Lounge Chair à travers les années"
+            />
+            <div class="timeline-year-roll" aria-label="De 1956 à 2026">
+              <span class="timeline-year-roll__number" data-year-roll data-year-start="1956" data-year-end="2026">1956</span>
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Les années passent.</p></div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Patine</span></div>
+          <figure class="timeline-asset parallax-visual">
+            <img
+              src="./Images/Eames/eames19.jpeg"
+              onerror="
+                this.onerror = null;
+                this.src = './Images/Eames/eames19.jpeg';
+              "
+              alt="Cuir patiné par le temps"
+            />
+            <div class="dotted-asset">
+              <span>image à placer : Images/Eames/eames19.jpeg</span>
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Le cuir se marque.</p></div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Matière</span></div>
+          <figure class="timeline-asset parallax-visual">
+            <img
+              src="./Images/Eames/timeline-wood-patina.png"
+              onerror="
+                this.closest('.timeline-asset').classList.add('is-missing');
+                this.remove();
+              "
+              alt="Bois qui se patine"
+            />
+            <div class="dotted-asset">
+              <span
+                >image à placer : Images/Eames/timeline-wood-patina.png</span
+              >
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Le bois se patine.</p></div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Temps</span></div>
+          <figure class="timeline-asset timeline-asset--aging-crossfade parallax-visual">
+            <img
+              class="timeline-aging-image timeline-aging-image--current"
+              src="./Images/Eames/eames 01.png"
+              onerror="
+                this.onerror = null;
+                this.src = './Images/Eames/eames01.png';
+              "
+              alt="Eames Lounge Chair avant vieillissement"
+            />
+            <img
+              class="timeline-aging-image timeline-aging-image--old"
+              src="./Images/Eames/oldeames.png"
+              onerror="
+                this.closest('.timeline-asset').classList.add('is-missing');
+                this.remove();
+              "
+              alt="Eames Lounge Chair vieilli"
+            />
+            <div class="dotted-asset">
+              <span>images à placer : Images/Eames/eames 01.png + Images/Eames/oldeames.png</span>
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>L’objet vieillit.</p></div>
+        </article>
+
+        <article
+          class="timeline-frame reveal-on-scroll timeline-frame--statement"
+        >
+          <div class="timeline-marker"><span>Classique</span></div>
+          <figure class="timeline-asset parallax-visual">
+            <img
+              src="./Images/Eames/timeline-classic-room.png"
+              onerror="
+                this.closest('.timeline-asset').classList.add('is-missing');
+                this.remove();
+              "
+              alt="Fauteuil devenu classique dans un intérieur"
+            />
+            <div class="dotted-asset">
+              <span
+                >image à placer : Images/Eames/timeline-classic-room.png</span
+              >
+            </div>
+          </figure>
+          <div class="story-frame__copy">
+            <h3>Mais il ne disparaît pas.</h3>
+          </div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Maison</span></div>
+          <figure class="timeline-asset timeline-asset--home-cards parallax-visual">
+            <img
+              class="timeline-home-card timeline-home-card--one"
+              src="./Images/Eames/eameshomes.jpg"
+              alt="Eames Lounge Chair dans une maison"
+            />
+            <img
+              class="timeline-home-card timeline-home-card--two"
+              src="./Images/Eames/eameshomes2.jpg"
+              alt="Intérieur domestique avec Eames Lounge Chair"
+            />
+            <img
+              class="timeline-home-card timeline-home-card--three"
+              src="./Images/Eames/eameshome3.jpg"
+              alt="Fauteuil Eames dans un espace de vie"
+            />
+            <div class="dotted-asset">
+              <span>images à placer : Images/Eames/eameshomes.jpg, eameshomes2.jpg, eameshome3.jpg</span>
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Il traverse les maisons.</p></div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Bureau</span></div>
+          <figure class="timeline-asset parallax-visual">
+            <img
+              src="./Images/Eames/timeline-office.png"
+              onerror="
+                this.closest('.timeline-asset').classList.add('is-missing');
+                this.remove();
+              "
+              alt="Le fauteuil dans un bureau"
+            />
+            <div class="dotted-asset">
+              <span>image à placer : Images/Eames/timeline-office.png</span>
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Les bureaux.</p></div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Cinéma</span></div>
+          <figure class="timeline-asset parallax-visual">
+            <img
+              src="./Images/Eames/timeline-cinema.png"
+              onerror="
+                this.closest('.timeline-asset').classList.add('is-missing');
+                this.remove();
+              "
+              alt="Le fauteuil dans les films"
+            />
+            <div class="dotted-asset">
+              <span>image à placer : Images/Eames/timeline-cinema.png</span>
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Les films.</p></div>
+        </article>
+
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>Transmission</span></div>
+          <figure class="timeline-asset parallax-visual">
+            <img
+              src="./Images/Eames/timeline-generations.png"
+              onerror="
+                this.closest('.timeline-asset').classList.add('is-missing');
+                this.remove();
+              "
+              alt="Transmission entre générations"
+            />
+            <div class="dotted-asset">
+              <span
+                >image à placer : Images/Eames/timeline-generations.png</span
+              >
+            </div>
+          </figure>
+          <div class="story-frame__copy"><p>Les générations.</p></div>
+        </article>
+      </section>
+
+      <section class="text-interlude timeline-outro reveal-on-scroll">
+        <p>
+          Aujourd’hui encore, près de soixante-dix ans après sa création, le
+          fauteuil continue d’être fabriqué.
+        </p>
+      </section>
+
+      <section
+        class="chapter-gate chapter-section"
+        id="chapter-final"
+        data-chapter-section
+      >
+        <video
+          class="chapter-gate__video"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
+          <source src="./Videos/eames-transition-06.mp4" type="video/mp4" />
+          <source src="./Vidéos/eames-transition-06.mp4" type="video/mp4" />
+        </video>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre VI</span>
+          <h2>Final</h2>
+          <p>Lorsqu’un objet cesse d’appartenir à son époque.</p>
+        </div>
+      </section>
+
+      <section class="text-interlude reveal-on-scroll">
+        <p>Et peut-être est-ce là le véritable signe d’un classique.</p>
+      </section>
+      <section class="text-interlude reveal-on-scroll">
+        <p>Lorsqu’un objet cesse d’appartenir à son époque.</p>
+      </section>
+      <section class="text-interlude reveal-on-scroll">
+        <p>Pour appartenir à toutes les autres.</p>
+      </section>
+
+      <section
+        class="final-scene final-scene--mosaic reveal-on-scroll"
+        aria-label="Fin de l’histoire Eames Lounge Chair"
+      >
+        <video
+          class="final-scene__background-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+        >
+          <source src="./Vidéos/Ray&Charles2.mov" type="video/quicktime" />
+        </video>
+        <div class="final-mosaic" aria-hidden="true">
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames 01.png" alt="" />
+            <img src="./Images/Eames/eames04.png" alt="" />
+            <img src="./Images/Eames/eameshomes.jpg" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/eamesrotating.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames09.png" alt="" />
+            <img src="./Images/Eames/eames19.jpeg" alt="" />
+            <img src="./Images/Eames/eameshome3.jpg" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/eamesheritage.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/charles&ray01.jpg" alt="" />
+            <img src="./Images/Eames/eames15.png" alt="" />
+            <img src="./Images/Eames/eameshomes2.jpg" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/Ray&Charles.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames02.png" alt="" />
+            <img src="./Images/Eames/eames10.png" alt="" />
+            <img src="./Images/Eames/oldeames.png" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/eamesassemblage.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames12.png" alt="" />
+            <img src="./Images/Eames/eames18.jpeg" alt="" />
+            <img src="./Images/Eames/charles&ray04.jpg" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/eamesloungechairmaking.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames03.png" alt="" />
+            <img src="./Images/Eames/eames14.png" alt="" />
+            <img src="./Images/Eames/charles&ray03.jpg" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/california1950.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames05.png" alt="" />
+            <img src="./Images/Eames/eames16.png" alt="" />
+            <img src="./Images/Eames/eames20.png" alt="" />
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--video">
+            <video autoplay muted loop playsinline>
+              <source src="./Vidéos/eamespressed.mov" type="video/quicktime" />
+            </video>
+          </div>
+          <div class="final-mosaic__cell final-mosaic__cell--image">
+            <img src="./Images/Eames/eames07.png" alt="" />
+            <img src="./Images/Eames/eames13.png" alt="" />
+            <img src="./Images/Eames/charles&ray05.jpg" alt="" />
+          </div>
+        </div>
+        <div class="final-actions">
+          <a href="index.html">Découvrir d’autres histoires</a>
+          <a href="designers.html">Voir la fiche designer</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="eames.js"></script>
+  </body>
+</html>
