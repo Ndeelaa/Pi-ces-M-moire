@@ -511,6 +511,21 @@ const timelineDrawPath = document.querySelector(".timeline-curve__draw");
 const timelineGlowPath = document.querySelector(".timeline-curve__glow");
 const timelineMaskPath = document.querySelector(".timeline-curve__mask");
 const timelineMarkers = Array.from(document.querySelectorAll(".timeline-frame .timeline-marker"));
+const timelineRevealPaths = [timelineGlowPath, timelineMaskPath].filter(Boolean);
+
+function prepareTimelinePath(path) {
+  const length = path.getTotalLength();
+  path.dataset.pathLength = String(length);
+  path.style.strokeDasharray = String(length);
+  path.style.strokeDashoffset = String(length);
+}
+
+timelineRevealPaths.forEach(prepareTimelinePath);
+
+function setTimelinePathProgress(path, progress) {
+  const length = Number(path.dataset.pathLength) || path.getTotalLength();
+  path.style.strokeDashoffset = String(length * (1 - progress));
+}
 
 function updateTimelineCurve() {
   if (!timelineStory || !timelineDrawPath) return;
@@ -522,20 +537,27 @@ function updateTimelineCurve() {
   const rawProgress = (start - rect.top) / (start - end || 1);
   const progress = clamp(rawProgress, 0, 1);
 
-  if (timelineGlowPath) {
-    timelineGlowPath.style.strokeDashoffset = String(1 - progress);
-  }
-  if (timelineMaskPath) {
-    timelineMaskPath.style.strokeDashoffset = String(1 - progress);
-  }
+  timelineRevealPaths.forEach((path) => setTimelinePathProgress(path, progress));
   timelineStory.style.setProperty("--timeline-draw", String(progress));
 
-  const activeMarkerIndex = Math.round(progress * Math.max(0, timelineMarkers.length - 1));
+  const viewportHeight = window.innerHeight || 1;
+  const viewportCenter = viewportHeight * 0.5;
+  const activeMarker = timelineMarkers
+    .map((marker) => {
+      const markerRect = marker.getBoundingClientRect();
+      const isFullyVisible = markerRect.top >= 0 && markerRect.bottom <= viewportHeight;
+      const markerCenter = markerRect.top + markerRect.height * 0.5;
+      return {
+        marker,
+        isFullyVisible,
+        distance: Math.abs(markerCenter - viewportCenter),
+      };
+    })
+    .filter((item) => item.isFullyVisible)
+    .sort((a, b) => a.distance - b.distance)[0]?.marker;
+
   timelineMarkers.forEach((marker, index) => {
-    marker.classList.toggle(
-      "is-stitched",
-      progress > 0.01 && progress < 0.99 && index === activeMarkerIndex,
-    );
+    marker.classList.toggle("is-stitched", marker === activeMarker);
   });
 }
 

@@ -2219,10 +2219,11 @@ main::before {
   position: absolute;
   left: 50%;
   top: clamp(78px, 10vh, 130px);
+  bottom: clamp(100px, 14vh, 170px);
   width: min(38vw, 520px);
-  height: calc(100% - clamp(170px, 22vh, 300px));
+  height: auto;
   transform: translateX(-50%);
-  z-index: 0;
+  z-index: 3;
   pointer-events: none;
   overflow: visible;
 }
@@ -2238,29 +2239,29 @@ main::before {
 }
 
 .timeline-curve__ghost {
-  stroke: rgba(255, 216, 194, 0.34);
-  stroke-width: 2.4;
+  stroke: rgba(255, 216, 194, 0.5);
+  stroke-width: 3.1;
   stroke-dasharray: 0.016 0.025;
 }
 
 .timeline-curve__glow {
-  stroke: rgba(181, 66, 27, 0.92);
-  stroke-width: 5.6;
+  stroke: rgba(255, 189, 136, 0.98);
+  stroke-width: 8;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   filter:
-    drop-shadow(0 0 8px rgba(255, 216, 194, 0.48))
-    drop-shadow(0 0 24px rgba(181, 66, 27, 0.76));
+    drop-shadow(0 0 10px rgba(255, 216, 194, 0.72))
+    drop-shadow(0 0 30px rgba(181, 66, 27, 0.92));
 }
 
 .timeline-curve__draw {
-  stroke: rgba(255, 216, 194, 0.96);
-  stroke-width: 4.6;
+  stroke: rgba(255, 244, 234, 1);
+  stroke-width: 5.4;
   stroke-dasharray: 0.018 0.024;
   stroke-dashoffset: 0;
   filter:
-    drop-shadow(0 0 8px rgba(255, 216, 194, 0.74))
-    drop-shadow(0 0 22px rgba(181, 66, 27, 0.7));
+    drop-shadow(0 0 10px rgba(255, 216, 194, 0.86))
+    drop-shadow(0 0 28px rgba(181, 66, 27, 0.82));
   mask: url("#timeline-stitch-mask");
 }
 
