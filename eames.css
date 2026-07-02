@@ -1700,10 +1700,10 @@ main::before {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition:
-    border-color 0.45s ease,
-    background 0.45s ease,
-    box-shadow 0.45s ease,
-    transform 0.45s ease;
+    border-color 1.15s ease,
+    background 1.15s ease,
+    box-shadow 1.15s ease,
+    transform 1.15s ease;
 }
 
 .timeline-marker.is-stitched {
@@ -1715,6 +1715,24 @@ main::before {
     0 0 0 10px rgba(181, 66, 27, 0.18),
     0 0 30px rgba(255, 216, 194, 0.46),
     0 24px 52px rgba(18, 10, 7, 0.3);
+  animation: timelineMarkerGlow 3.4s ease-in-out infinite;
+}
+
+@keyframes timelineMarkerGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 10px rgba(181, 66, 27, 0.14),
+      0 0 20px rgba(255, 216, 194, 0.32),
+      0 24px 52px rgba(18, 10, 7, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 14px rgba(181, 66, 27, 0.2),
+      0 0 42px rgba(255, 216, 194, 0.58),
+      0 24px 52px rgba(18, 10, 7, 0.3);
+  }
 }
 
 .timeline-marker span {
@@ -2210,6 +2228,7 @@ main::before {
 }
 
 .timeline-curve__ghost,
+.timeline-curve__glow,
 .timeline-curve__draw,
 .timeline-curve__mask {
   fill: none;
@@ -2219,19 +2238,29 @@ main::before {
 }
 
 .timeline-curve__ghost {
-  stroke: rgba(255, 216, 194, 0.24);
-  stroke-width: 2;
-  stroke-dasharray: 0.008 0.024;
+  stroke: rgba(255, 216, 194, 0.34);
+  stroke-width: 2.4;
+  stroke-dasharray: 0.016 0.025;
+}
+
+.timeline-curve__glow {
+  stroke: rgba(181, 66, 27, 0.92);
+  stroke-width: 5.6;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 216, 194, 0.48))
+    drop-shadow(0 0 24px rgba(181, 66, 27, 0.76));
 }
 
 .timeline-curve__draw {
   stroke: rgba(255, 216, 194, 0.96);
-  stroke-width: 3.1;
-  stroke-dasharray: 0.01 0.022;
+  stroke-width: 4.6;
+  stroke-dasharray: 0.018 0.024;
   stroke-dashoffset: 0;
   filter:
-    drop-shadow(0 0 6px rgba(255, 216, 194, 0.64))
-    drop-shadow(0 0 18px rgba(181, 66, 27, 0.62));
+    drop-shadow(0 0 8px rgba(255, 216, 194, 0.74))
+    drop-shadow(0 0 22px rgba(181, 66, 27, 0.7));
   mask: url("#timeline-stitch-mask");
 }
 

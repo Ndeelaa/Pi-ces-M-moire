@@ -508,6 +508,7 @@ function updateParallax() {
 /* Curved timeline drawing — follows scroll progress */
 const timelineStory = document.querySelector(".timeline-story");
 const timelineDrawPath = document.querySelector(".timeline-curve__draw");
+const timelineGlowPath = document.querySelector(".timeline-curve__glow");
 const timelineMaskPath = document.querySelector(".timeline-curve__mask");
 const timelineMarkers = Array.from(document.querySelectorAll(".timeline-frame .timeline-marker"));
 
@@ -521,15 +522,20 @@ function updateTimelineCurve() {
   const rawProgress = (start - rect.top) / (start - end || 1);
   const progress = clamp(rawProgress, 0, 1);
 
+  if (timelineGlowPath) {
+    timelineGlowPath.style.strokeDashoffset = String(1 - progress);
+  }
   if (timelineMaskPath) {
     timelineMaskPath.style.strokeDashoffset = String(1 - progress);
   }
   timelineStory.style.setProperty("--timeline-draw", String(progress));
 
+  const activeMarkerIndex = Math.round(progress * Math.max(0, timelineMarkers.length - 1));
   timelineMarkers.forEach((marker, index) => {
-    const threshold =
-      timelineMarkers.length <= 1 ? 0 : index / Math.max(1, timelineMarkers.length - 1);
-    marker.classList.toggle("is-stitched", progress >= threshold - 0.035);
+    marker.classList.toggle(
+      "is-stitched",
+      progress > 0.01 && progress < 0.99 && index === activeMarkerIndex,
+    );
   });
 }
 
