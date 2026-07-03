@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pièces Mémoire - Eames Lounge Chair</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat+Alternates:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="eames.css" />
+  </head>
+  <body>
+    <div class="intro-curtain" aria-hidden="true">
+      <div class="curtain-panel curtain-panel--left">
+        <div class="curtain-folds"></div>
+      </div>
+      <div class="curtain-panel curtain-panel--right">
+        <div class="curtain-folds"></div>
+      </div>
+      <div class="curtain-title">
+        <p class="curtain-title__brand">Pièces Mémoire</p>
+        <span class="curtain-title__present">présente</span>
+      </div>
+      <div class="intro-curtain__grain"></div>
+    </div>
+
+    <header class="story-header">
+      <a class="story-exit" href="index.html" aria-label="Retour à l'accueil">
+        <img src="./Images/logo archival.png" alt="" />
+        <span>Sortie</span>
+      </a>
+    </header>
+
+    <nav class="chapter-nav" aria-label="Navigation des chapitres">
+      <a class="chapter-nav__link" href="#chapter-origin" data-chapter-link>
+        <span class="chapter-nav__number">01</span>
+        <span class="chapter-nav__label">Origine</span>
+      </a>
+      <a class="chapter-nav__link" href="#chapter-idea" data-chapter-link>
+        <span class="chapter-nav__number">02</span>
+        <span class="chapter-nav__label">Contexte</span>
+      </a>
+      <a class="chapter-nav__link" href="#chapter-material" data-chapter-link>
+        <span class="chapter-nav__number">03</span>
+        <span class="chapter-nav__label">Matière</span>
+      </a>
+      <a class="chapter-nav__link" href="#chapter-assembly" data-chapter-link>
+        <span class="chapter-nav__number">04</span>
+        <span class="chapter-nav__label">Assemblage</span>
+      </a>
+    </nav>
+
+    <main>
+      <section class="opening-scene" id="top">
+        <video
+          class="opening-scene__background-video"
+          muted
+          loop
+          playsinline
+          autoplay
+          preload="metadata"
+        >
+          <source src="./Vidéos/Eamesloungerotating.mov" type="video/quicktime" />
+          <source src="./Vidéos/Eamesloungerotating.mov" type="video/quicktime" />
+        </video>
+        <div class="opening-scene__text reveal-on-scroll">
+          <p class="eyebrow">Objet iconique de 1956</p>
+          <h1>Eames Lounge Chair</h1>
+          <p>L'un des fauteuils les plus célèbres du XXe siècle.</p>
+        </div>
+        <figure class="opening-scene__chair reveal-on-scroll">
+          <video muted loop playsinline autoplay preload="metadata">
+            <source src="./Vidéos/Eamesloungerotating.mov" type="video/quicktime" />
+            <source src="./Vidéos/Eamesloungerotating.mov" type="video/quicktime" />
+          </video>
+        </figure>
+        <p class="scroll-note">Défiler</p>
+      </section>
+
+      <section class="text-interlude prelude-zoom reveal-on-scroll">
+        <p>Avant d’entrer dans les musées et d'apparaître dans les magazines.</p>
+      </section>
+
+      <section
+        class="chapter-gate"
+        id="chapter-origin"
+        data-chapter-section
+      >
+        <video class="chapter-gate__video" muted loop playsinline preload="metadata">
+          <source src="./Vidéos/eamesloungechairmaking.mov" type="video/quicktime" />
+          <source src="./Vidéos/eamesloungechairmaking.mov" type="video/quicktime" />
+        </video>
+        <div class="chapter-door chapter-door--left"></div>
+        <div class="chapter-door chapter-door--right"></div>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre I</span>
+          <h2>Naissance</h2>
+          <p>Un fauteuil pensé comme un refuge.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story">
+        <article class="story-frame reveal-on-scroll">
+          <div class="story-frame__visual story-frame__visual--image parallax-visual">
+            <img src="./Images/Eames/Charles&Ray/charles&ray01.jpg" alt="Charles et Ray Eames" />
+            <div class="dotted-asset dotted-asset--large">
+              <span>image : Charles et Ray Eames</span>
+            </div>
+          </div>
+          <div class="story-frame__copy">
+            <p>
+              Charles et Ray Eames ne dessinent pas seulement des meubles.
+              Ils fabriquent des manières d’habiter.
+            </p>
+          </div>
+        </article>
+
+        <article class="story-frame story-frame--reverse reveal-on-scroll">
+          <div class="story-frame__visual story-frame__visual--image parallax-visual">
+            <img src="./Images/Eames/eames 01.png" alt="Eames Lounge Chair" />
+            <div class="dotted-asset dotted-asset--large">
+              <span>image : Eames Lounge Chair</span>
+            </div>
+          </div>
+          <div class="story-frame__copy">
+            <p>
+              Le Lounge Chair naît de cette envie : offrir le confort profond
+              d’un vieux fauteuil club, avec la précision du design moderne.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="text-interlude reveal-on-scroll">
+        <p>Un objet familier, presque domestique.</p>
+      </section>
+
+      <section class="chapter-gate" id="chapter-idea" data-chapter-section>
+        <video class="chapter-gate__video" muted loop playsinline preload="metadata">
+          <source src="./Vidéos/usa01.mp4" type="video/mp4" />
+          <source src="./Vidéos/usa01.mp4" type="video/mp4" />
+        </video>
+        <div class="chapter-door chapter-door--left"></div>
+        <div class="chapter-door chapter-door--right"></div>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre II</span>
+          <h2>Années 1950</h2>
+          <p>Le confort devient une forme culturelle.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story single-phrase-flow">
+        <article class="story-frame california-background reveal-on-scroll">
+          <video
+            class="california-background__video"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="./Vidéos/california1950.mov" type="video/quicktime" />
+            <source src="./Vidéos/california1950.mov" type="video/quicktime" />
+          </video>
+          <div class="california-background__shade"></div>
+          <div class="california-background__fallback">
+            <span>vidéo : california1950.mov</span>
+          </div>
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>
+              Au milieu des années
+              <span class="rolling-year" data-year="1950">1950</span>,
+              les intérieurs américains changent de rythme.
+            </p>
+          </div>
+        </article>
+
+        <article
+          class="story-frame story-frame--text-only reveal-on-scroll atelier-floating-scene"
+          data-floating-scene
+        >
+          <div class="floating-objects" aria-hidden="true">
+            <img class="floating-object floating-object--01" src="./Images/Eames/furniture01.png" alt="" data-depth="48" data-float-x="42" data-float-y="28" data-speed="0.86" data-rotation="-8" />
+            <img class="floating-object floating-object--02" src="./Images/Eames/furniture02.png" alt="" data-depth="36" data-float-x="36" data-float-y="44" data-speed="0.72" data-rotation="10" />
+            <img class="floating-object floating-object--03" src="./Images/Eames/furniture03.png" alt="" data-depth="58" data-float-x="30" data-float-y="38" data-speed="0.92" data-rotation="-14" />
+            <img class="floating-object floating-object--04" src="./Images/Eames/furniture04.png" alt="" data-depth="42" data-float-x="46" data-float-y="32" data-speed="0.82" data-rotation="8" />
+            <img class="floating-object floating-object--05" src="./Images/Eames/furniture05.png" alt="" data-depth="36" data-float-x="42" data-float-y="24" data-speed="0.76" data-rotation="12" />
+            <img class="floating-object floating-object--06" src="./Images/Eames/furniture06.png" alt="" data-depth="52" data-float-x="30" data-float-y="44" data-speed="0.98" data-rotation="-12" />
+            <img class="floating-object floating-object--07" src="./Images/Eames/furniture07.png" alt="" data-depth="31" data-float-x="26" data-float-y="38" data-speed="0.7" data-rotation="6" />
+            <img class="floating-object floating-object--08" src="./Images/Eames/furniture08.png" alt="" data-depth="44" data-float-x="38" data-float-y="28" data-speed="0.88" data-rotation="-9" />
+          </div>
+          <div class="story-frame__copy story-frame__copy--center">
+            <p class="atelier-floating-scene__text">
+              Dans leur atelier, Charles et Ray Eames observent le mobilier qui
+              les entoure.
+            </p>
+          </div>
+          <div class="atelier-floating-hint" aria-hidden="true">
+            Faites bouger les objets
+          </div>
+        </article>
+
+        <div
+          class="horizontal-scroll horizontal-scroll--genesis"
+          data-horizontal-scroll
+        >
+          <div class="horizontal-scroll__sticky">
+            <div class="horizontal-scroll__track">
+              <article class="story-frame story-frame--text-only reveal-on-scroll horizontal-scroll__panel">
+                <div class="story-frame__copy story-frame__copy--center">
+                  <p>
+                    Beaucoup de fauteuils modernes sont
+                    <span class="sketch-circle-mark">
+                      <span>élégants</span>
+                      <svg viewBox="0 0 220 92" aria-hidden="true">
+                        <path d="M18 51 C15 28, 47 10, 101 7 C160 4, 207 24, 205 52 C203 80, 151 90, 89 85 C40 81, 13 67, 18 51 Z" />
+                      </svg>
+                    </span>.
+                  </p>
+                </div>
+              </article>
+              <article class="story-frame story-frame--text-only reveal-on-scroll horizontal-scroll__panel">
+                <div class="story-frame__copy story-frame__copy--center">
+                  <p>
+                    Beaucoup sont
+                    <span class="sketch-circle-mark">
+                      <span>innovants</span>
+                      <svg viewBox="0 0 240 92" aria-hidden="true">
+                        <path d="M23 52 C19 25, 55 9, 112 8 C178 7, 224 25, 221 55 C218 83, 162 90, 96 84 C45 79, 17 67, 23 52 Z" />
+                      </svg>
+                    </span>.
+                  </p>
+                </div>
+              </article>
+              <article class="story-frame story-frame--text-only reveal-on-scroll horizontal-scroll__panel">
+                <div class="story-frame__copy story-frame__copy--center">
+                  <p>Leur fauteuil cherche autre chose : une présence.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter-gate" id="chapter-material" data-chapter-section>
+        <video class="chapter-gate__video" muted loop playsinline preload="metadata">
+          <source src="./Vidéos/wood01.mp4" type="video/mp4" />
+          <source src="./Vidéos/wood01.mp4" type="video/mp4" />
+        </video>
+        <div class="chapter-door chapter-door--left"></div>
+        <div class="chapter-door chapter-door--right"></div>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre III</span>
+          <h2>Matières</h2>
+          <p>Bois courbé, cuir, métal : chaque détail porte un rôle.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story">
+        <article class="story-frame reveal-on-scroll">
+          <div class="story-frame__visual story-frame__visual--image parallax-visual">
+            <img src="./Images/Eames/eames wood.png" alt="Bois courbé" />
+            <div class="dotted-asset dotted-asset--large">
+              <span>image : bois courbé</span>
+            </div>
+          </div>
+          <div class="story-frame__copy">
+            <p>
+              Le bois moulé enveloppe le corps sans l’enfermer.
+              La coque devient une architecture miniature.
+            </p>
+          </div>
+        </article>
+
+        <article class="story-frame story-frame--reverse reveal-on-scroll">
+          <div class="story-frame__visual story-frame__visual--image parallax-visual">
+            <img src="./Images/Eames/eames lounge chair Image:sketch.png" alt="Croquis du fauteuil Eames" />
+            <div class="dotted-asset dotted-asset--large">
+              <span>image : croquis du fauteuil</span>
+            </div>
+          </div>
+          <div class="story-frame__copy">
+            <p>La technique disparaît derrière la sensation d’évidence.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="chapter-gate" id="chapter-assembly" data-chapter-section>
+        <video class="chapter-gate__video" muted loop playsinline preload="metadata">
+          <source src="./Vidéos/eamesrotating.mov" type="video/quicktime" />
+          <source src="./Vidéos/eamesrotating.mov" type="video/quicktime" />
+        </video>
+        <div class="chapter-door chapter-door--left"></div>
+        <div class="chapter-door chapter-door--right"></div>
+        <div class="chapter-gate__content reveal-on-scroll">
+          <span>Chapitre IV</span>
+          <h2>Assemblage</h2>
+          <p>Chaque élément trouve son équilibre.</p>
+        </div>
+      </section>
+
+      <section class="chapter-story single-phrase-flow">
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <h3>Chaque élément trouve sa place.</h3>
+          </div>
+        </article>
+
+        <section
+          class="eames-assembly-section"
+          aria-label="Assemblage 3D du fauteuil Eames Lounge Chair"
+        >
+          <div class="eames-assembly-scene">
+            <div class="eames-assembly-copy">
+              <span>Exploded view</span>
+              <p>Les pièces se rapprochent, l’objet se reconstruit.</p>
+            </div>
+
+            <div class="eames-assembly-object" data-eames-assembly>
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameselement4.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameselement2.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eamespuff4.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameseelemnt5.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eamespuff2.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameshead.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eamespuff3.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameswheel1.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameswood1.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameswood3.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameswood2.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eamessleeve1.png" alt="" />
+              <img class="eames-assembly-piece" src="./Images/Eames/Eames 3D/eameselement.png" alt="" />
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--seat"
+              data-assembly-callout
+            >
+              <svg class="eames-assembly-callout__arrow" viewBox="0 0 300 130" aria-hidden="true">
+                <circle class="eames-assembly-callout__dot" cx="8" cy="120" r="4" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--diagonal" d="M 8 120 L 38.72 -15.84" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--horizontal" d="M 38.72 -15.84 L -32.1 -15.84" />
+              </svg>
+              <p class="eames-assembly-callout__label">L’assise</p>
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--back"
+              data-assembly-callout
+            >
+              <svg class="eames-assembly-callout__arrow" viewBox="0 0 300 130" aria-hidden="true">
+                <circle class="eames-assembly-callout__dot" cx="8" cy="160" r="4" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--diagonal" d="M 8 160 L 8 358" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--horizontal" d="M 8 358 L 352 358" />
+              </svg>
+              <p class="eames-assembly-callout__label">Le dossier.</p>
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--headrest"
+              data-assembly-callout
+            >
+              <svg class="eames-assembly-callout__arrow" viewBox="0 0 300 130" aria-hidden="true">
+                <circle class="eames-assembly-callout__dot" cx="8" cy="120" r="4" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--diagonal" d="M 8 120 L 26.36 38.64" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--horizontal" d="M 26.36 38.64 L 280.67 38.64" />
+              </svg>
+              <p class="eames-assembly-callout__label">L’appui-tête.</p>
+            </div>
+
+            <div
+              class="eames-assembly-callout eames-assembly-callout--ottoman"
+              data-assembly-callout
+            >
+              <svg class="eames-assembly-callout__arrow" viewBox="0 0 300 130" aria-hidden="true">
+                <circle class="eames-assembly-callout__dot" cx="8" cy="120" r="4" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--diagonal" d="M 8 120 L -45 212" />
+                <path class="eames-assembly-callout__line eames-assembly-callout__line--horizontal" d="M -45 212 L -65.25 212" />
+              </svg>
+              <p class="eames-assembly-callout__label">Le repose-pieds.</p>
+            </div>
+          </div>
+        </section>
+
+        <article class="story-frame story-frame--text-only reveal-on-scroll">
+          <div class="story-frame__copy story-frame__copy--center">
+            <p>Rien ne semble superflu.</p>
+          </div>
+        </article>
+        <article class="story-frame reveal-on-scroll">
+          <div class="story-frame__visual parallax-visual dotted-asset dotted-asset--large">
+            <span>image possible : Images/Eames/eames-parts-dotted.png</span>
+          </div>
+          <div class="story-frame__copy">
+            <p>Puis vient le moment où l’objet quitte l’atelier.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="timeline-story" aria-label="Chronologie du fauteuil">
+        <svg class="timeline-curve" viewBox="0 0 1000 420" aria-hidden="true">
+          <path class="timeline-curve__ghost" d="M60 330 C250 90, 420 420, 620 180 C750 20, 860 140, 940 70" />
+          <path class="timeline-curve__draw" d="M60 330 C250 90, 420 420, 620 180 C750 20, 860 140, 940 70" />
+        </svg>
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>1956</span></div>
+          <div class="timeline-asset">
+            <img src="./Images/Eames/eames03.png" alt="Archive Eames" />
+          </div>
+          <div class="story-frame__copy">
+            <p>Le fauteuil est présenté au public et entre dans l’imaginaire domestique.</p>
+          </div>
+        </article>
+        <article class="timeline-frame reveal-on-scroll">
+          <div class="timeline-marker"><span>XXe</span></div>
+          <div class="timeline-asset">
+            <img src="./Images/Eames/eames18.jpeg" alt="Archive du fauteuil Eames" />
+          </div>
+          <div class="story-frame__copy">
+            <p>Il traverse les salons, les bureaux, les films et les collections.</p>
+          </div>
+        </article>
+        <div class="timeline-outro reveal-on-scroll">
+          <p>Un objet n’est jamais seulement une forme. Il garde la mémoire des gestes qui l’ont construit.</p>
+        </div>
+      </section>
+
+      <section class="final-scene reveal-on-scroll">
+        <h2>Charles &amp; Ray Eames</h2>
+        <p>
+          Leur travail relie l’industrie, l’image, le jeu et l’espace domestique.
+        </p>
+        <img src="./Images/Eames/Charles&Ray/charles&ray02.jpg" alt="Charles et Ray Eames" />
+        <div class="final-actions">
+          <a href="designers.html">Voir la fiche designer</a>
+          <a href="archives.html">Explorer les archives</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="eames.js"></script>
+  </body>
+</html>

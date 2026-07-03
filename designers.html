@@ -16,18 +16,15 @@
   </head>
 
   <body class="designer-page">
-    <header class="designer-header">
-      <div class="logo">
-        <a href="index.html">Pièces Mémoire.</a>
-      </div>
-
-      <nav>
-        <a href="archives.html">Archives</a>
-        <a href="eames.html">Eames Lounge Chair</a>
-        <a href="index.html">Accueil</a>
-      </nav>
-
-      <button class="menu-btn" type="button" aria-label="Ouvrir le menu">☰</button>
+    <header class="story-header">
+      <a
+        href="index.html"
+        class="story-exit"
+        aria-label="Retour à l’accueil Pièces Mémoire"
+        title="Sortie"
+      >
+        <img src="./Images/logo archival.png" alt="" />
+      </a>
     </header>
 
     <main>
@@ -43,7 +40,7 @@
         </div>
 
         <figure class="designer-hero__portrait">
-          <img src="./Images/Eames/charles&ray02.jpg" alt="Charles et Ray Eames" />
+          <img src="./Images/Eames/Charles&Ray/charles&ray02.jpg" alt="Charles et Ray Eames" />
           <figcaption>Une signature : confort, précision industrielle et chaleur domestique.</figcaption>
         </figure>
       </section>
@@ -58,33 +55,72 @@
       </section>
 
       <section class="designer-profile">
-        <article>
-          <span>1907–1978</span>
-          <h2>Charles Eames</h2>
-          <p>
-            Architecte et designer formé dans le Missouri, Charles Eames
-            s’intéresse très tôt aux structures, aux procédés industriels et à
-            la production en série.
-          </p>
-        </article>
+        <section class="designer-profile-panel designer-profile-panel--text-left">
+          <article>
+            <span>1907–1978</span>
+            <h2>Charles Eames</h2>
+            <p>
+              Architecte et designer formé dans le Missouri, Charles Eames
+              s’intéresse très tôt aux structures, aux procédés industriels et à
+              la production en série.
+            </p>
+            <button
+              class="designer-more-btn"
+              type="button"
+              data-designer-popup-open
+              aria-label="En savoir plus sur Charles Eames"
+            >
+              +
+            </button>
+          </article>
+          <figure>
+            <img src="./Images/Eames/Charles&Ray/charles.jpg" alt="Charles Eames" />
+          </figure>
+        </section>
 
-        <article>
-          <span>1912–1988</span>
-          <h2>Ray Eames</h2>
-          <p>
-            Artiste et designer, Ray Kaiser Eames apporte au studio une
-            sensibilité graphique, picturale et textile décisive.
-          </p>
-        </article>
+        <section class="designer-profile-panel designer-profile-panel--text-right">
+          <figure>
+            <img src="./Images/Eames/Charles&Ray/ray03.jpg" alt="Ray Eames" />
+          </figure>
+          <article>
+            <span>1912–1988</span>
+            <h2>Ray Eames</h2>
+            <p>
+              Artiste et designer, Ray Kaiser Eames apporte au studio une
+              sensibilité graphique, picturale et textile décisive.
+            </p>
+            <button
+              class="designer-more-btn"
+              type="button"
+              data-designer-popup-open
+              aria-label="En savoir plus sur Ray Eames"
+            >
+              +
+            </button>
+          </article>
+        </section>
 
-        <article>
-          <span>1941</span>
-          <h2>Une rencontre fondatrice</h2>
-          <p>
-            Leur collaboration naît à la Cranbrook Academy of Art, puis se
-            déploie en Californie dans un studio pensé comme un laboratoire.
-          </p>
-        </article>
+        <section class="designer-profile-panel designer-profile-panel--full">
+          <figure>
+            <img src="./Images/Eames/Charles&Ray/charles&ray4.jpg" alt="Charles et Ray Eames" />
+          </figure>
+          <article>
+            <span>1941</span>
+            <h2>Une rencontre fondatrice</h2>
+            <p>
+              Leur collaboration naît à la Cranbrook Academy of Art, puis se
+              déploie en Californie dans un studio pensé comme un laboratoire.
+            </p>
+            <button
+              class="designer-more-btn"
+              type="button"
+              data-designer-popup-open
+              aria-label="En savoir plus sur Charles et Ray Eames"
+            >
+              +
+            </button>
+          </article>
+        </section>
       </section>
 
       <section class="designer-story">
@@ -120,10 +156,24 @@
       <section class="designer-timeline" aria-label="Repères chronologiques">
         <h2>Repères</h2>
         <ol>
-          <li><span>1940</span> Expérimentations autour du contreplaqué moulé.</li>
-          <li><span>1949</span> Construction de la Eames House à Pacific Palisades.</li>
-          <li><span>1956</span> Lancement du Eames Lounge Chair et de son ottoman.</li>
-          <li><span>1977</span> Film <em>Powers of Ten</em>, synthèse de leur pensée visuelle.</li>
+          <li>
+            <span>TIME</span>
+            <a href="https://time.com/3754246/charles-and-ray-eames-simply-genius/" target="_blank" rel="noreferrer">
+              Charles and Ray Eames: Simply Genius
+            </a>
+          </li>
+          <li>
+            <span>AD</span>
+            <a href="https://www.architecturaldigest.com/story/eames-lounge-chair-review" target="_blank" rel="noreferrer">
+              How Much Hype Does the Iconic Eames Chair Really Deserve?
+            </a>
+          </li>
+          <li>
+            <span>Le Monde</span>
+            <a href="https://www.lemonde.fr/en/lifestyle/article/2026/05/03/the-eames-house-an-enduring-utopia-spared-by-the-los-angeles-fires_6753075_37.html" target="_blank" rel="noreferrer">
+              The Eames House, an enduring utopia
+            </a>
+          </li>
         </ol>
       </section>
 
@@ -132,6 +182,32 @@
         <a href="archives.html">Explorer la galerie</a>
       </section>
     </main>
+
+    <div
+      class="designer-popup"
+      data-designer-popup
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Articles complémentaires"
+    >
+      <div class="designer-popup__panel">
+        <button
+          class="designer-popup__close"
+          type="button"
+          data-designer-popup-close
+          aria-label="Fermer la fenêtre"
+        >
+          ×
+        </button>
+        <p>Si vous souhaitez en savoir plus, vous pouvez consulter ces articles</p>
+        <ul>
+          <li><a href="#article01">article01</a></li>
+          <li><a href="#article02">article02</a></li>
+          <li><a href="#article03">article03</a></li>
+        </ul>
+      </div>
+    </div>
 
     <div class="overlay"></div>
 

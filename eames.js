@@ -46,9 +46,11 @@ window.addEventListener("load", () => {
   if (!introCurtain) return;
 
   const curtainStorageKey = "piecesMemoireEamesCurtainPlayed";
+  const referrerPath = document.referrer ? new URL(document.referrer).pathname : "";
+  const isFromHome = referrerPath.endsWith("/") || referrerPath.endsWith("/index.html");
   const hasPlayedCurtain = window.sessionStorage.getItem(curtainStorageKey) === "true";
 
-  if (hasPlayedCurtain) {
+  if (hasPlayedCurtain && !isFromHome) {
     introCurtain.classList.add("is-hidden");
     return;
   }
@@ -507,10 +509,61 @@ function updateParallax() {
 
 /* Curved timeline drawing — follows scroll progress */
 const timelineStory = document.querySelector(".timeline-story");
+const timelineCurveSvg = document.querySelector(".timeline-curve");
+const timelineGhostPath = document.querySelector(".timeline-curve__ghost");
 const timelineDrawPath = document.querySelector(".timeline-curve__draw");
+const timelineRevealPath = document.querySelector(".timeline-curve__reveal");
+const timelineMarkers = Array.from(document.querySelectorAll(".timeline-frame .timeline-marker"));
+
+function buildTimelineMarkerPath() {
+  if (!timelineStory || !timelineCurveSvg || !timelineMarkers.length) return 0;
+
+  const storyRect = timelineStory.getBoundingClientRect();
+  const points = timelineMarkers.map((marker) => {
+    const markerRect = marker.getBoundingClientRect();
+    return {
+      x: markerRect.left + markerRect.width * 0.5 - storyRect.left,
+      y: markerRect.top + markerRect.height * 0.5 - storyRect.top,
+    };
+  });
+
+  timelineCurveSvg.setAttribute("viewBox", `0 0 ${storyRect.width} ${timelineStory.offsetHeight}`);
+
+  const revealMask = document.getElementById("timeline-stitch-reveal");
+  revealMask?.setAttribute("width", String(storyRect.width));
+  revealMask?.setAttribute("height", String(timelineStory.offsetHeight));
+
+  if (!points.length) return 0;
+
+  const curveOffset = Math.min(84, Math.max(42, storyRect.width * 0.06));
+  let pathData = `M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
+
+  points.slice(1).forEach((point, index) => {
+    const previous = points[index];
+    const direction = index % 2 === 0 ? 1 : -1;
+    const yDistance = point.y - previous.y;
+    const controlOneX = previous.x + curveOffset * direction;
+    const controlTwoX = point.x - curveOffset * direction;
+    const controlOneY = previous.y + yDistance * 0.34;
+    const controlTwoY = point.y - yDistance * 0.34;
+
+    pathData += ` C ${controlOneX.toFixed(2)} ${controlOneY.toFixed(2)}, ${controlTwoX.toFixed(2)} ${controlTwoY.toFixed(2)}, ${point.x.toFixed(2)} ${point.y.toFixed(2)}`;
+  });
+
+  timelineGhostPath?.setAttribute("d", pathData);
+  timelineDrawPath?.setAttribute("d", pathData);
+  timelineRevealPath?.setAttribute("d", pathData);
+
+  const timelineRevealLength = timelineRevealPath?.getTotalLength() || 0;
+  if (timelineRevealPath) {
+    timelineRevealPath.style.strokeDasharray = String(timelineRevealLength);
+  }
+
+  return timelineRevealLength;
+}
 
 function updateTimelineCurve() {
-  if (!timelineStory || !timelineDrawPath) return;
+  if (!timelineStory || !timelineDrawPath || !timelineRevealPath) return;
 
   const rect = timelineStory.getBoundingClientRect();
   const viewportHeight = window.innerHeight || 1;
@@ -519,9 +572,164 @@ function updateTimelineCurve() {
   const rawProgress = (start - rect.top) / (start - end || 1);
   const progress = clamp(rawProgress, 0, 1);
 
-  timelineDrawPath.style.strokeDashoffset = String(1 - progress);
+  const timelineRevealLength = buildTimelineMarkerPath();
+  timelineRevealPath.style.strokeDashoffset = String(timelineRevealLength * (1 - progress));
   timelineStory.style.setProperty("--timeline-draw", String(progress));
+
+  const activeMarker = timelineMarkers
+    .map((marker) => {
+      const markerRect = marker.getBoundingClientRect();
+      const markerCenter = markerRect.top + markerRect.height * 0.5;
+      return {
+        marker,
+        isVisible: markerRect.top >= 0 && markerRect.bottom <= viewportHeight,
+        distance: Math.abs(markerCenter - viewportHeight * 0.5),
+      };
+    })
+    .filter((item) => item.isVisible)
+    .sort((a, b) => a.distance - b.distance)[0]?.marker;
+
+  timelineMarkers.forEach((marker) => {
+    marker.classList.toggle("is-stitched", marker === activeMarker);
+  });
 }
+
+const timelineAnecdotes = {
+  "1956": {
+    kicker: "1956",
+    title: "Une apparition publique",
+    text:
+      "Le fauteuil est présenté en 1956, au moment où Herman Miller introduit cette version moderne du fauteuil club. L’objet arrive comme une pièce de confort luxueuse, très différente des premières recherches plus économiques des Eames.",
+    source: "https://www.hermanmiller.com/products/seating/lounge-seating/eames-lounge-chair-and-ottoman/",
+  },
+  Patine: {
+    kicker: "Patine",
+    title: "Le cuir devait vivre",
+    text:
+      "Charles Eames cherchait une sensation chaleureuse, proche d’un vieux gant de baseball assoupli par l’usage. Le cuir et le bois n’étaient donc pas pensés comme des surfaces figées, mais comme des matières faites pour garder les traces du temps.",
+    source: "https://www.architecturaldigest.com/story/eames-lounge-chair-review",
+  },
+  "Matière": {
+    kicker: "Matière",
+    title: "Le contreplaqué comme héritage",
+    text:
+      "Avant le Lounge Chair, les Eames avaient déjà poussé très loin le contreplaqué moulé, notamment pendant la Seconde Guerre mondiale avec des attelles produites pour la Marine américaine. Cette expérience technique nourrit ensuite leurs meubles courbes.",
+    source: "https://www.wallpaper.com/design-interiors/charles-ray-eames-furniture-design-definitive-guide",
+  },
+  Temps: {
+    kicker: "Temps",
+    title: "Un objet encore fabriqué",
+    text:
+      "Herman Miller rappelle que le Lounge Chair and Ottoman est en production continue depuis son lancement en 1956. Cette durée explique pourquoi il fonctionne autant comme meuble que comme archive vivante du design américain.",
+    source: "https://www.hermanmiller.com/products/seating/lounge-seating/eames-lounge-chair-and-ottoman/",
+  },
+  Classique: {
+    kicker: "Classique",
+    title: "Un fauteuil devenu signe",
+    text:
+      "Pensé comme une relecture moderne du fauteuil club du XIXe siècle, le Lounge Chair est devenu l’une des formes les plus reconnaissables du design du XXe siècle.",
+    source: "https://www.hermanmiller.com/products/seating/lounge-seating/eames-lounge-chair-and-ottoman/",
+  },
+  Maison: {
+    kicker: "Maison",
+    title: "Du musée au salon",
+    text:
+      "L’objet a très vite dépassé le statut de prototype : les images de campagne le montraient dans des intérieurs variés, comme pour prouver qu’un fauteuil moderniste pouvait aussi devenir un meuble domestique.",
+    source: "https://en.wikipedia.org/wiki/Eames_Lounge_Chair",
+  },
+  Bureau: {
+    kicker: "Bureau",
+    title: "Un confort professionnel",
+    text:
+      "La diffusion par Herman Miller a installé le fauteuil dans une culture du travail et des intérieurs modernes, entre espace domestique, bureau de direction et objet de représentation.",
+    source: "https://www.hermanmiller.com/products/seating/lounge-seating/eames-lounge-chair-and-ottoman/",
+  },
+  "Cinéma": {
+    kicker: "Cinéma",
+    title: "Les Eames filmaient aussi",
+    text:
+      "Charles et Ray Eames ne se limitaient pas au mobilier : leur studio produisait aussi des films, des expositions et des objets pédagogiques. Leur manière de raconter le monde visuellement a accompagné la réception de leurs meubles.",
+    source: "https://www.wallpaper.com/design-interiors/charles-ray-eames-furniture-design-definitive-guide",
+  },
+  Transmission: {
+    kicker: "Transmission",
+    title: "Une mémoire entretenue",
+    text:
+      "Le travail des Eames est aujourd’hui conservé, étudié et transmis par plusieurs institutions et archives. Le fauteuil continue ainsi d’exister comme objet, mais aussi comme récit de conception.",
+    source: "https://www.wallpaper.com/design-interiors/charles-ray-eames-furniture-design-definitive-guide",
+  },
+};
+
+const timelinePopup = document.querySelector("[data-timeline-popup]");
+const timelinePopupClose = document.querySelector("[data-timeline-popup-close]");
+const timelinePopupKicker = document.querySelector("[data-timeline-popup-kicker]");
+const timelinePopupTitle = document.querySelector("[data-timeline-popup-title]");
+const timelinePopupText = document.querySelector("[data-timeline-popup-text]");
+const timelinePopupSource = document.querySelector("[data-timeline-popup-source]");
+
+function closeTimelinePopup() {
+  if (!timelinePopup) return;
+  timelinePopup.classList.remove("is-open");
+  timelinePopup.setAttribute("aria-hidden", "true");
+}
+
+function openTimelinePopup(marker) {
+  if (!timelinePopup || !marker) return;
+
+  const key = marker.textContent.trim();
+  const anecdote = timelineAnecdotes[key];
+  if (!anecdote) return;
+
+  if (timelinePopupKicker) timelinePopupKicker.textContent = anecdote.kicker;
+  if (timelinePopupTitle) timelinePopupTitle.textContent = anecdote.title;
+  if (timelinePopupText) timelinePopupText.textContent = anecdote.text;
+  if (timelinePopupSource) timelinePopupSource.href = anecdote.source;
+
+  timelinePopup.classList.add("is-open");
+  timelinePopup.setAttribute("aria-hidden", "false");
+  timelinePopupClose?.focus({ preventScroll: true });
+}
+
+timelineMarkers.forEach((marker) => {
+  marker.setAttribute("role", "button");
+  marker.setAttribute("tabindex", "0");
+  marker.setAttribute("aria-label", `Ouvrir l'anecdote ${marker.textContent.trim()}`);
+  marker.addEventListener("click", () => openTimelinePopup(marker));
+  marker.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openTimelinePopup(marker);
+  });
+});
+
+timelinePopupClose?.addEventListener("click", closeTimelinePopup);
+timelinePopup?.addEventListener("click", (event) => {
+  if (event.target === timelinePopup) closeTimelinePopup();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeTimelinePopup();
+});
+
+const designerTransitionOverlay = document.querySelector(".designer-transition-overlay");
+const designerFinalLink = document.querySelector('.final-actions a[href="designers.html"]');
+
+designerFinalLink?.addEventListener("click", (event) => {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+  event.preventDefault();
+  const targetHref = designerFinalLink.href;
+
+  if (!prefersReducedMotion && designerTransitionOverlay) {
+    designerTransitionOverlay.classList.add("is-active");
+    window.setTimeout(() => {
+      window.location.href = targetHref;
+    }, 760);
+    return;
+  }
+
+  window.location.href = targetHref;
+});
 
 const horizontalScrolls = Array.from(document.querySelectorAll("[data-horizontal-scroll]"));
 

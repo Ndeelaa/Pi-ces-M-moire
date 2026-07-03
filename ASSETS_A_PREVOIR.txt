@@ -1,0 +1,78 @@
+PIÈCES MÉMOIRE — version scrollytelling simple / immersive V5
+
+Images gardées ou utilisées :
+- ./Images/logo archival.png
+- ./Images/Eames/eames 01.png
+- ./Images/Eames/eames01.png (fallback)
+- ./Images/Eames/eames wood.png
+
+Vidéos utilisées si elles existent :
+- ./Videos/background01.mp4
+- ./Videos/usa01.mp4
+- ./Videos/luminaire01.mp4
+- ./Videos/etincelles01.mp4
+- ./Videos/eames-transition-04.mp4
+- ./Videos/eames-transition-05.mp4
+- ./Videos/eames-transition-06.mp4
+
+Fallbacks conservés pour l’ancien dossier accentué :
+- ./Vidéos/background01.mp4
+- ./Vidéos/usa01.mp4
+- ./Vidéos/luminaire01.mp4
+- ./Vidéos/étincelles01.mp4
+- ./Vidéos/eames-transition-04.mp4
+- ./Vidéos/eames-transition-05.mp4
+- ./Vidéos/eames-transition-06.mp4
+
+Images optionnelles à créer plus tard, actuellement remplacées par des cadres pointillés :
+- ./Images/Eames/california-atelier-1950.png
+- ./Images/Eames/comfort-question-dots.png
+- ./Images/Eames/comfort-mind-dots.png
+- ./Images/Eames/wood-curves-process.png
+- ./Images/Eames/eames-parts-dotted.png
+- ./Images/Eames/eames-public-presentation.png
+
+Timeline progressive à partir de “Les années passent...” :
+- ./Images/Eames/timeline-1956-launch.png
+- ./Images/Eames/timeline-leather-patina.png
+- ./Images/Eames/timeline-wood-patina.png
+- ./Images/Eames/timeline-aging-closeup.png
+- ./Images/Eames/timeline-classic-room.png
+- ./Images/Eames/timeline-home-interior.png
+- ./Images/Eames/timeline-office.png
+- ./Images/Eames/timeline-cinema.png
+- ./Images/Eames/timeline-generations.png
+
+Images flottantes réactivées dans la scène atelier :
+- ./Images/Eames/furniture01.png
+- ./Images/Eames/furniture02.png
+- ./Images/Eames/furniture03.png
+- ./Images/Eames/furniture04.png
+- ./Images/Eames/furniture05.png
+- ./Images/Eames/furniture06.png
+- ./Images/Eames/furniture07.png
+- ./Images/Eames/furniture08.png
+
+V4 :
+- Rideau “Pièces Mémoire présente” rétabli avec ouverture lente.
+- Timeline progressive visuelle ajoutée à partir de “Les années passent...”.
+- Pas de scroll snap.
+- Pas de section pin.
+- Une phrase par beat narratif.
+- Objets flottants actifs seulement quand leur scène est visible.
+
+V5 :
+- Effet porte ajouté sur chaque chapitre.
+- Intro “Pièces Mémoire présente” retravaillée : Pièces Mémoire apparaît d’abord, puis “présente” en dessous, plus grand, sans superposition.
+- Timeline héritage transformée en courbe qui se dessine progressivement au scroll.
+- La phrase “Aujourd’hui encore...” est sortie de la timeline et placée à part.
+
+V6 :
+- Intro “Pièces Mémoire présente” agrandie, empilée et forcée sans superposition.
+- Sous-titre hero remplacé par “L'un des fauteuils les plus célèbres du XXe siècle.”
+- Mention Scroll visible dès l’ouverture de la scène.
+- Première phrase “Mais avant d’entrer...” transformée en passage immersif avec zoom au scroll.
+- Textes à partir de cette phrase révélés progressivement mot par mot selon la progression du scroll.
+- Entrée de chapitre pilotée au scroll : portes + contenu qui avance/zoom progressivement.
+- “Nous sommes en Californie.” utilise ./Videos/usa01.mp4 comme background plein écran de la scène.
+- Roll casino de 1950 ralenti et renforcé.
