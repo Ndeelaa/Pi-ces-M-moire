@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirection - Pièces Mémoire</title>
+    <script>
+      const canonicalBase = "/Pi-ces-M-moire/";
+      const lowerBase = "/pi-ces-m-moire/";
+      const path = window.location.pathname;
+      const suffix = path.toLowerCase().startsWith(lowerBase)
+        ? path.slice(lowerBase.length)
+        : "";
+
+      window.location.replace(
+        canonicalBase + suffix + window.location.search + window.location.hash,
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirection vers Pièces Mémoire...</p>
+  </body>
+</html>
