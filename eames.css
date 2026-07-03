@@ -4362,3 +4362,70 @@ main::before {
     width: min(300px, calc(100% - 28px));
   }
 }
+
+/* Requested refinements: straight genesis text, blended wood light, long marker fit. */
+.horizontal-scroll--genesis .story-frame__copy {
+  width: min(1180px, calc(100vw - clamp(56px, 12vw, 192px)));
+  max-width: calc(100vw - clamp(56px, 12vw, 192px));
+  text-align: center;
+  transform: none !important;
+}
+
+.horizontal-scroll--genesis .story-frame__copy p {
+  width: 100% !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  transform: none !important;
+}
+
+.horizontal-scroll--genesis .progress-word,
+.horizontal-scroll--genesis .sketch-circle-mark,
+.horizontal-scroll--genesis .sketch-circle-mark span {
+  transform: none !important;
+}
+
+.horizontal-scroll--genesis .sketch-circle-mark svg {
+  transform: translate(-50%, -50%) rotate(0deg) !important;
+}
+
+.text-interlude,
+.story-frame--text-only:not(.california-background):not(.atelier-floating-scene) {
+  overflow: visible;
+}
+
+.text-interlude::before,
+.story-frame--text-only:not(.california-background):not(.atelier-floating-scene)::before {
+  inset: -30vh -18vw;
+  z-index: 0;
+  opacity: 0.4;
+  background:
+    radial-gradient(ellipse at 26% 42%, transparent 0 27%, rgba(255, 216, 194, 0.12) 28% 28.7%, transparent 29.7% 100%),
+    radial-gradient(ellipse at 72% 58%, transparent 0 32%, rgba(45, 23, 17, 0.15) 33% 33.8%, transparent 34.8% 100%),
+    repeating-radial-gradient(ellipse at 50% 52%, rgba(255, 216, 194, 0.055) 0 1.4px, transparent 2px 22px),
+    linear-gradient(105deg, transparent 12%, rgba(255, 244, 234, 0.11) 46%, transparent 70%);
+  background-size: 120% 120%, 140% 120%, 96% 136%, 240% 100%;
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 0 56%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 0 56%, transparent 82%);
+  mix-blend-mode: soft-light;
+  animation: woodDetailIllumination 10s ease-in-out infinite alternate;
+}
+
+.text-interlude::after,
+.story-frame--text-only:not(.california-background):not(.atelier-floating-scene)::after {
+  inset: -20vh -12vw;
+  z-index: 0;
+  opacity: 0.3;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 216, 194, 0.16), transparent 38%),
+    linear-gradient(90deg, transparent 18%, rgba(181, 66, 27, 0.12), transparent 78%);
+  mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+  mix-blend-mode: screen;
+}
+
+.timeline-marker--long span {
+  max-width: 78%;
+  font-size: clamp(6.8px, 0.68vw, 8.6px);
+  letter-spacing: 0.035em;
+  line-height: 1.08;
+}
