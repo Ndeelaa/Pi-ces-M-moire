@@ -27,7 +27,40 @@
         <span class="curtain-title__brand">Pièces Mémoire</span>
         <span class="curtain-title__present">présente</span>
       </div>
+      <p class="curtain-start-note">Appuyer sur la touche Entrée pour commencer l’immersion</p>
     </div>
+
+    <script>
+      (() => {
+        const storageKey = "piecesMemoireEamesCurtainPlayed";
+        const curtain = document.querySelector(".intro-curtain");
+        if (!curtain) return;
+
+        const referrerPath = document.referrer ? new URL(document.referrer).pathname : "";
+        const isFromHome = referrerPath.endsWith("/") || referrerPath.endsWith("/index.html");
+        const hasPlayed = window.sessionStorage.getItem(storageKey) === "true";
+
+        function startCurtainIntro() {
+          if (curtain.classList.contains("is-hidden")) return;
+          curtain.classList.add("is-playing");
+          window.sessionStorage.setItem(storageKey, "true");
+        }
+
+        function startFromKeyboard(event) {
+          if (event.key !== "Enter") return;
+          startCurtainIntro();
+          window.removeEventListener("keydown", startFromKeyboard);
+        }
+
+        if (hasPlayed && !isFromHome) {
+          curtain.classList.add("is-hidden");
+          return;
+        }
+
+        window.addEventListener("keydown", startFromKeyboard);
+        window.requestAnimationFrame(() => window.setTimeout(startCurtainIntro, 180));
+      })();
+    </script>
 
     <header class="story-header">
       <a

@@ -68,7 +68,7 @@ function initCurtainIntro() {
 
   window.setTimeout(() => {
     introCurtain.classList.add("is-hidden");
-  }, 5840);
+  }, 8350);
 }
 
 if (document.readyState === "loading") {
@@ -78,6 +78,7 @@ if (document.readyState === "loading") {
 }
 
 window.setTimeout(initCurtainIntro, 300);
+window.addEventListener("pageshow", initCurtainIntro, { once: true });
 
 /* Scroll-progress word reveal — from “Mais avant...” onward */
 const textRevealElements = [];
