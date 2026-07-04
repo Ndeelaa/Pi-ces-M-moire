@@ -41,9 +41,11 @@ function scrollToTarget(target) {
 }
 
 /* Curtain intro */
-window.addEventListener("load", () => {
+function initCurtainIntro() {
   const introCurtain = document.querySelector(".intro-curtain");
   if (!introCurtain) return;
+  if (introCurtain.dataset.curtainInitialized === "true") return;
+  introCurtain.dataset.curtainInitialized = "true";
 
   const curtainStorageKey = "piecesMemoireEamesCurtainPlayed";
   const referrerPath = document.referrer ? new URL(document.referrer).pathname : "";
@@ -67,7 +69,15 @@ window.addEventListener("load", () => {
   window.setTimeout(() => {
     introCurtain.classList.add("is-hidden");
   }, 5840);
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCurtainIntro, { once: true });
+} else {
+  initCurtainIntro();
+}
+
+window.setTimeout(initCurtainIntro, 300);
 
 /* Scroll-progress word reveal — from “Mais avant...” onward */
 const textRevealElements = [];
